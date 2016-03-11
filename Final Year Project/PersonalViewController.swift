@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-
-class PersonalViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class PersonalViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, WCSessionDelegate {
 
     @IBOutlet weak var profilePic: UIImageView!
     var isEdit = false
     var tempName = variables.defaults.objectForKey("userName")!
     let imagePicKer = UIImagePickerController()
     var photoPath = "\(variables.filePath)/profile_photo.png"
-
+    
+        var session: WCSession!
+    
     @IBOutlet weak var edit: UIButton!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
@@ -71,6 +73,11 @@ class PersonalViewController: UIViewController, UINavigationControllerDelegate, 
 
 
     override func viewDidLoad() {
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self;
+            session.activateSession()
+        }
         super.viewDidLoad()
         imagePicKer.delegate = self
 
@@ -114,6 +121,17 @@ class PersonalViewController: UIViewController, UINavigationControllerDelegate, 
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
+    ////testing
+        @IBAction func testButtonSend(sender: AnyObject) {
+            let testDict = ["test":"iOS2AW"]
+            if WCSession.isSupported() {
+                do{
+                    try session!.updateApplicationContext(testDict)
+                    //print(String(repCountDict["rep"]) + "sent!")
+                }catch{
+                    print("error catch")
+                }
+            }
+        }
 
 }

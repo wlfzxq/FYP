@@ -8,14 +8,14 @@
 
 import UIKit
 
+class AboutYouViewController: UIViewController, UITextFieldDelegate, setUserDataDelegate{
 
-
-class AboutYouViewController: UIViewController, UITextFieldDelegate, setUserDataDelegate {
-    
 
     //let user = UserDetail()
     
     override func viewDidLoad() {
+
+
         super.viewDidLoad()
         self.nameTextField.delegate = self
         self.ageTextField.delegate = self
@@ -90,6 +90,9 @@ class AboutYouViewController: UIViewController, UITextFieldDelegate, setUserData
 //            
 //        }
 //    }
+    
+    
+
     
 }
 

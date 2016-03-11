@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class LogViewController: UIViewController {
+class LogViewController: UIViewController{
 
     @IBOutlet weak var seg: UISegmentedControl!
     @IBOutlet weak var test: UILabel!
+
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -23,6 +26,14 @@ class LogViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
+    
+    
+    
+
+
+
+
 
     /*
     // MARK: - Navigation

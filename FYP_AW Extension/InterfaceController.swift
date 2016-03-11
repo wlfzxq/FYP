@@ -8,9 +8,9 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
-
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -52,11 +52,11 @@ class InterfaceController: WKInterfaceController {
             // squatMax = defaultForAW.floatForKey("SquatMax")
             //deadliftMax = defaultForAW.floatForKey("DeadliftMax")
             //benchMax = defaultForAW.floatForKey("BenchMax")
-            print("gonna set labels")
-            print("s:" + String(pnp1.S_set))
+           // print("gonna set labels")
+            //print("s:" + String(pnp1.S_set))
             pnp1.currentLift = defaultForExtension.integerForKey("currentlift")
             switch(pnp1.currentLift){
-            case 0: pnp1.S_set = defaultForExtension.integerForKey("setcount"); if(pnp1.S_set == 0){pnp1.S_set = 1}; print("s:" + String(pnp1.S_set))
+            case 0: pnp1.S_set = defaultForExtension.integerForKey("setcount"); if(pnp1.S_set == 0){pnp1.S_set = 1}; //print("s:" + String(pnp1.S_set))
             case 1:pnp1.B_set = defaultForExtension.integerForKey("setcount"); print("b" + String(pnp1.B_set))
             case 2:pnp1.D_set = defaultForExtension.integerForKey("setcount"); print("d" + String(pnp1.D_set))
             default:break;//pnp1.B_set = defaultForExtension.integerForKey("setcount")
@@ -146,6 +146,31 @@ class InterfaceController: WKInterfaceController {
         }
     }
 
+    //////test receiving
+    var session: WCSession!
+    
+    override init() {
+        super.init()
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
+    }
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        let receivedTest = applicationContext["test"] as? String
+        print("receive from iOS: " + receivedTest!)
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.LiftScheme.setText(receivedTest! + " received")
+        }
+        
+    }
+
+    
+    
+    
+    
 }
 
 

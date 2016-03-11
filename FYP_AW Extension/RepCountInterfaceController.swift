@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
-class RepCountInterfaceController: WKInterfaceController{
+class RepCountInterfaceController: WKInterfaceController, WCSessionDelegate{
     override func awakeWithContext(context: AnyObject?) {
 
         super.awakeWithContext(context)
@@ -59,9 +59,20 @@ class RepCountInterfaceController: WKInterfaceController{
 //    let mainInt = InterfaceController()
     
     @IBOutlet var RepPicker: WKInterfacePicker!
+    var session : WCSession!
+    
+    override init() {
+        super.init()
+        setTitle("Done")
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
+    }
 
     @IBAction func getSelectedRep(value: Int) {
-        print(value)
+        //print(value)
         selectedRep = value
     }
     override func willActivate() {
@@ -73,11 +84,21 @@ class RepCountInterfaceController: WKInterfaceController{
     
     override func didDeactivate() {
         super.didDeactivate()
+        print("Sending to ios: " + String(selectedRep))
+        sendRepCount()
         }
     
-    override init() {
-        super.init()
-        setTitle("Done")
+    func sendRepCount(){
+        let repCountDict = ["rep":selectedRep]
+        if WCSession.isSupported() {
+            do{
+                try session!.updateApplicationContext(repCountDict)
+                //print(String(repCountDict["rep"]) + "sent!")
+            }catch{
+                print("error catch")
+            }
+                   }
     }
 
 }
+

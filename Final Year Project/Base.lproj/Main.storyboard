@@ -1247,6 +1247,13 @@
                                     <action selector="pickNewProfilePhoto:" destination="U8r-s3-GHH" eventType="touchUpInside" id="Goz-YM-spc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvY-if-4Ov">
+                                <rect key="frame" x="143" y="387" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="testButtonSend:" destination="U8r-s3-GHH" eventType="touchUpInside" id="VZi-AF-N32"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

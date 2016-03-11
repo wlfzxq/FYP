@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class TodayViewController: UIViewController {
+class TodayViewController: UIViewController, WCSessionDelegate {
     
     @IBOutlet weak var DateLabel: UILabel!
+    var session: WCSession!
     let date = NSDate()
     let cal = NSCalendar.currentCalendar()
     var weekday = ""
@@ -46,7 +48,11 @@ class TodayViewController: UIViewController {
         }
         DateLabel.text = "Today is " + String(month) + "/" + String(day) + "/" + String(year) + " " + weekday
         
-        
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self;
+            session.activateSession()
+        }
         
         super.viewDidLoad()
         
@@ -62,6 +68,21 @@ class TodayViewController: UIViewController {
     @IBOutlet weak var lift3_detail: UITextView!
     @IBOutlet weak var lift4_detail: UITextView!
     
+ //   @IBOutlet weak var testReceivingRepLabel: UILabel!
+    /*receiving from AW*/
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        let receivedRep = applicationContext["rep"] as? Int
+        print("received a rep count: " + String(receivedRep))
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.DateLabel.text = String(receivedRep) + " received"
+        }
+    }
+    
+    
+    
+    
+    /*done receiving*/
     
     
     
