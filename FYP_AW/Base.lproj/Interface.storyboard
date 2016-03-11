@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15E61b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FYP_AW" customModuleProvider="target">
+                    <items>
+                        <dateLabel alignment="left" id="6yr-OU-o6K">
+                            <color key="textColor" red="0.94849389791488647" green="0.97395139932632446" blue="0.8990904688835144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                            <dateFormatterStyle key="dateStyle" medium="YES"/>
+                            <date key="previewedDate" timeIntervalSinceReferenceDate="429296940">
+                                <!--2014-08-09 17:09:00 +0000-->
+                            </date>
+                        </dateLabel>
+                        <group width="1" alignment="left" id="NUE-7c-Rpj">
+                            <items>
+                                <label width="79" height="19.5" alignment="left" text="Lift" id="Amx-QK-yup">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <separator alignment="left" id="n1O-fr-tMR"/>
+                                <label width="76.5" alignment="left" text="100kg" id="lBk-mV-x4C">
+                                    <color key="textColor" red="0.99157506227493286" green="0.89680284261703491" blue="0.005346604622900486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label alignment="left" text="RPE Description" numberOfLines="3" id="lUs-e1-Rpc">
+                            <color key="textColor" red="0.97961384057998657" green="0.10949704796075821" blue="0.03688734769821167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <group width="1" height="19.5" alignment="left" id="L7c-dZ-oXo">
+                            <items>
+                                <label width="30" alignment="left" text="Set" id="aCk-kt-lEV"/>
+                                <label width="17" alignment="left" text="m" id="e5N-fl-j3L"/>
+                                <label width="20" alignment="left" text="of" id="SA9-WH-s1G"/>
+                                <label width="30" alignment="left" text="n" id="mwZ-JV-fAh"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Record" id="bVW-qS-IQq">
+                            <connections>
+                                <segue destination="5M2-ka-IEb" kind="modal" id="61L-4X-Pg1"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="LiftScheme" destination="Amx-QK-yup" id="eLB-Hl-8x4"/>
+                        <outlet property="RPEDescription" destination="lUs-e1-Rpc" id="7Vz-L4-XPY"/>
+                        <outlet property="RecordButton" destination="bVW-qS-IQq" id="G6i-4X-3Qj"/>
+                        <outlet property="WeightLabel" destination="lBk-mV-x4C" id="MiJ-ua-Llu"/>
+                        <outlet property="remainSetLabel" destination="e5N-fl-j3L" id="ICd-Aq-4NR"/>
+                        <outlet property="totalSetLabel" destination="mwZ-JV-fAh" id="ksM-J2-mxc"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--repPickController-->
+        <scene sceneID="fSl-mw-7zY">
+            <objects>
+                <controller identifier="repPickController" id="5M2-ka-IEb" customClass="RepCountInterfaceController" customModule="FYP_AW_Extension">
+                    <items>
+                        <label width="136" height="41.5" alignment="center" text="How many reps did you do?" numberOfLines="2" id="V2Q-x8-qRU">
+                            <color key="textColor" red="0.97961384057998657" green="0.10949704796075821" blue="0.03688734769821167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                        <picker height="100" alignment="left" id="BBJ-pW-6l0">
+                            <connections>
+                                <action selector="getSelectedRep:" destination="5M2-ka-IEb" id="CDL-MH-UHa"/>
+                            </connections>
+                        </picker>
+                    </items>
+                    <connections>
+                        <outlet property="RepPicker" destination="BBJ-pW-6l0" id="7lI-r8-fgU"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="426" y="419"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="FYP_AW" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <label alignment="left" text="Program Name" id="pRG-IQ-U3I">
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
+                            <items>
+                                <label width="136" alignment="left" text="Lift_1" id="y22-Z3-Mkd"/>
+                                <label alignment="left" text="Lift_2" id="hr7-Ne-t4h"/>
+                                <label alignment="left" text="Lift_3" id="HN2-tK-ZzG"/>
+                                <label alignment="left" text="Lift_4" id="4RE-Zj-kVe"/>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="672"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="FYP_AW" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="1001"/>
+        </scene>
+    </scenes>
+</document>
