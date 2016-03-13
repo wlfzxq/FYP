@@ -36,6 +36,8 @@
 		5B461AA41C5F721200DADAE8 /* Program_Candito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B461AA31C5F721200DADAE8 /* Program_Candito.swift */; };
 		5B5B47451BAADC5000935B9B /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B47441BAADC5000935B9B /* MainTabViewController.swift */; };
 		5B5B47471BAAE07A00935B9B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B47461BAAE07A00935B9B /* SettingsViewController.swift */; };
+		5B67E90D1C95B7F800362E66 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B67E9061C95B73C00362E66 /* Charts.framework */; };
+		5B67E90E1C95B7F800362E66 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B67E9061C95B73C00362E66 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B7389D31BA701E000B9721A /* LiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7389D21BA701E000B9721A /* LiftsViewController.swift */; };
 		5B75CB091C73346900629203 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75CB081C73346900629203 /* TodayViewController.swift */; };
 		5BA50A8C1BAAABD00055C012 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA50A8B1BAAABD00055C012 /* DatePickerViewController.swift */; };
@@ -76,6 +78,41 @@
 			remoteGlobalIDString = 5B2354A71BA595EE002A2D27;
 			remoteInfo = "Final Year Project";
 		};
+		5B67E9051C95B73C00362E66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B67E8FE1C95B73C00362E66 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		5B67E9071C95B73C00362E66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B67E8FE1C95B73C00362E66 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		5B67E9091C95B73C00362E66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B67E8FE1C95B73C00362E66 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
+			remoteInfo = "Charts-OSX";
+		};
+		5B67E90B1C95B73C00362E66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B67E8FE1C95B73C00362E66 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
+		5B67E90F1C95B7F900362E66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B67E8FE1C95B73C00362E66 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
 		5BD8870B1C907BCE00C961A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5B2354A01BA595EE002A2D27 /* Project object */;
@@ -106,6 +143,17 @@
 				5B20D2841BC3EC9900F1DF97 /* FYP_AW.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B67E9111C95B7F900362E66 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B67E90E1C95B7F800362E66 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5BD887111C907BCE00C961A5 /* Embed App Extensions */ = {
@@ -157,6 +205,7 @@
 		5B461AA31C5F721200DADAE8 /* Program_Candito.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program_Candito.swift; sourceTree = "<group>"; };
 		5B5B47441BAADC5000935B9B /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		5B5B47461BAAE07A00935B9B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5B67E8FE1C95B73C00362E66 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		5B7389D21BA701E000B9721A /* LiftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftsViewController.swift; sourceTree = "<group>"; };
 		5B75CB081C73346900629203 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		5BA50A8B1BAAABD00055C012 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B67E90D1C95B7F800362E66 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +310,7 @@
 				5BD887041C907BCE00C961A5 /* TodayPlanWidget */,
 				5BD887011C907BCE00C961A5 /* Frameworks */,
 				5B2354A91BA595EE002A2D27 /* Products */,
+				5B67E8FE1C95B73C00362E66 /* Charts.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -336,6 +387,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5B67E8FF1C95B73C00362E66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B67E9061C95B73C00362E66 /* Charts.framework */,
+				5B67E9081C95B73C00362E66 /* Charts.framework */,
+				5B67E90A1C95B73C00362E66 /* Charts.framework */,
+				5B67E90C1C95B73C00362E66 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5BD887011C907BCE00C961A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,12 +463,14 @@
 				5B2354A61BA595EE002A2D27 /* Resources */,
 				5B20D28C1BC3EC9900F1DF97 /* Embed Watch Content */,
 				5BD887111C907BCE00C961A5 /* Embed App Extensions */,
+				5B67E9111C95B7F900362E66 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				5B20D2831BC3EC9900F1DF97 /* PBXTargetDependency */,
 				5BD8870C1C907BCE00C961A5 /* PBXTargetDependency */,
+				5B67E9101C95B7F900362E66 /* PBXTargetDependency */,
 			);
 			name = "Final Year Project";
 			productName = "Final Year Project";
@@ -511,6 +575,12 @@
 			mainGroup = 5B23549F1BA595EE002A2D27;
 			productRefGroup = 5B2354A91BA595EE002A2D27 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5B67E8FF1C95B73C00362E66 /* Products */;
+					ProjectRef = 5B67E8FE1C95B73C00362E66 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5B2354A71BA595EE002A2D27 /* Final Year Project */,
@@ -521,6 +591,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5B67E9061C95B73C00362E66 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 5B67E9051C95B73C00362E66 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B67E9081C95B73C00362E66 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 5B67E9071C95B73C00362E66 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B67E90A1C95B73C00362E66 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 5B67E9091C95B73C00362E66 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B67E90C1C95B73C00362E66 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 5B67E90B1C95B73C00362E66 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5B20D2601BC3EC9900F1DF97 /* Resources */ = {
@@ -647,6 +748,11 @@
 			isa = PBXTargetDependency;
 			target = 5B2354A71BA595EE002A2D27 /* Final Year Project */;
 			targetProxy = 5B2354BE1BA595EF002A2D27 /* PBXContainerItemProxy */;
+		};
+		5B67E9101C95B7F900362E66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = 5B67E90F1C95B7F900362E66 /* PBXContainerItemProxy */;
 		};
 		5BD8870C1C907BCE00C961A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
