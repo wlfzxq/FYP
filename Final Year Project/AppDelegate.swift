@@ -14,7 +14,7 @@ struct variables {
     static let defaults = NSUserDefaults.standardUserDefaults()
     static let fileManager = NSFileManager.defaultManager()
     static var filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    
+    static var core_data = majorData()
 
 }
 
@@ -48,19 +48,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
-            var defaultForExtension:NSUserDefaults! = NSUserDefaults(suiteName: "group.FYPGroup")
+            
+            
+            /////////loading data here
+            variables.user.squat = variables.defaults.floatForKey("userSquatAtBegin")
+            variables.user.bench = variables.defaults.floatForKey("userBenchAtBegin")
+            variables.user.deadlift = variables.defaults.floatForKey("userDeadliftAtBegin")
+            variables.user.curProgram = variables.defaults.objectForKey("CurrentProgram") as! String
+            variables.core_data.squat_max.append(variables.defaults.floatForKey("initialSQMax"))
+            variables.core_data.deadlift_max.append(variables.defaults.floatForKey("initialDLMax"))
+            variables.core_data.bench_max.append(variables.defaults.floatForKey("initialBPMax"))
+            
 
+            ///////////
+            var defaultForExtension:NSUserDefaults! = NSUserDefaults(suiteName: "group.FYPGroup")
             if(defaultForExtension != nil){
+                print("init:" + String(variables.defaults.floatForKey("next_squat")))
                 defaultForExtension.setObject(variables.user.curProgram, forKey: "Program")
-                defaultForExtension.setFloat(variables.user.bench, forKey: "BenchMax")
-                defaultForExtension.setFloat(variables.user.squat, forKey: "SquatMax")
-                defaultForExtension.setFloat(variables.user.deadlift, forKey: "DeadliftMax")
+//                defaultForExtension.setFloat(variables.user.bench, forKey: "BenchMax")
+//                defaultForExtension.setFloat(variables.user.squat, forKey: "SquatMax")
+//                defaultForExtension.setFloat(variables.user.deadlift, forKey: "DeadliftMax")
+                defaultForExtension.setFloat(variables.defaults.floatForKey("next_bench"), forKey: "bench_weight")
+                defaultForExtension.setFloat(variables.defaults.floatForKey("next_deadlift"), forKey: "deadlift_weight")
+                defaultForExtension.setFloat(variables.defaults.floatForKey("next_squat"), forKey: "squat_weight")
                 defaultForExtension.synchronize()
-                print(defaultForExtension.objectForKey("Program"))
+                print("default fot ext:" + String(defaultForExtension.objectForKey("Program")!))
             }
 
         }
         else{
+            
             print("Virgin")
 
             }

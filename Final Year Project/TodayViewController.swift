@@ -20,7 +20,10 @@ class TodayViewController: UIViewController, WCSessionDelegate {
     override func viewDidLoad() {
         prgm = variables.user.curProgram
         
-        print(prgm);
+//        print(prgm);
+//        print("major data" + String(variables.core_data.squat_max))
+//        print("user data" + String(variables.user.squat))
+        
         let comp = cal.components([.Day, .Month, .Year, .Weekday], fromDate: date)
         let year = comp.year
         let month = comp.month
@@ -52,6 +55,7 @@ class TodayViewController: UIViewController, WCSessionDelegate {
             session = WCSession.defaultSession()
             session.delegate = self;
             session.activateSession()
+            sendSetDetails()
         }
         
         super.viewDidLoad()
@@ -70,16 +74,29 @@ class TodayViewController: UIViewController, WCSessionDelegate {
     
  //   @IBOutlet weak var testReceivingRepLabel: UILabel!
     /*receiving from AW*/
-    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-        let receivedRep = applicationContext["rep"] as? Int
-        print("received a rep count: " + String(receivedRep))
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            self.DateLabel.text = String(receivedRep) + " received"
+//    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+//        let receivedRep = applicationContext["rep"] as? Int
+//        print("received a rep count: " + String(receivedRep))
+//        
+//        dispatch_async(dispatch_get_main_queue()) {
+//            self.DateLabel.text = String(receivedRep) + " received"
+//        }
+//    }
+//    
+    func sendSetDetails() {
+       // let testDict = ["test":"iOS2AW"]
+        //print("next_squat" + String(variables.defaults.floatForKey("next_squat")))
+        let setInfo = ["squat":variables.defaults.floatForKey("next_squat"), "bench":variables.defaults.floatForKey("next_bench"),"deadlift":variables.defaults.floatForKey("next_deadlift")]
+        //print("setInfo: " + String(setInfo["squat"]))
+        if WCSession.isSupported() {
+            do{
+                try session!.updateApplicationContext(setInfo)
+                print("sent!")
+            }catch{
+                print("error catch")
+            }
         }
     }
-    
-    
     
     
     /*done receiving*/

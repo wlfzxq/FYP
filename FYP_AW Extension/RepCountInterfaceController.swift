@@ -11,8 +11,11 @@ import Foundation
 import WatchConnectivity
 
 class RepCountInterfaceController: WKInterfaceController, WCSessionDelegate{
+    
+    var currentLift:Int = 0;
+    var lastSet = false
     override func awakeWithContext(context: AnyObject?) {
-
+        currentLift = (context?.currentLift)!
         super.awakeWithContext(context)
         var defaultForExtension:NSUserDefaults! = NSUserDefaults(suiteName: "group.FYPGroup")
         if(defaultForExtension != nil){
@@ -22,6 +25,7 @@ class RepCountInterfaceController: WKInterfaceController, WCSessionDelegate{
                 if(defaultForExtension.integerForKey("setcount") == pnp1.getTotalSet(pnp1.currentLift)){
                     defaultForExtension.setInteger(1, forKey: "setcount")
                     defaultForExtension.setInteger(pnp1.currentLift+1, forKey: "currentlift")
+                    lastSet = true
                 }
                 else{
                     defaultForExtension.setInteger(defaultForExtension.integerForKey("setcount")+1, forKey: "setcount")
@@ -49,18 +53,18 @@ class RepCountInterfaceController: WKInterfaceController, WCSessionDelegate{
         RepPicker.focus()
         
     }
-    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
-        return setNum
-    }
+//    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+//        return setNum
+//    }
     
     var selectedRep = 0
-    var setNum = 1
+    //var setNum = 1
        // let program = PNP1.init()
 //    let mainInt = InterfaceController()
     
     @IBOutlet var RepPicker: WKInterfacePicker!
     var session : WCSession!
-    
+//    
     override init() {
         super.init()
         setTitle("Done")
@@ -86,10 +90,13 @@ class RepCountInterfaceController: WKInterfaceController, WCSessionDelegate{
         super.didDeactivate()
         print("Sending to ios: " + String(selectedRep))
         sendRepCount()
+        if(lastSet){
+            sendFinishSignal()
+        }
         }
     
     func sendRepCount(){
-        let repCountDict = ["rep":selectedRep]
+        let repCountDict = ["lift": currentLift,"rep":selectedRep]
         if WCSession.isSupported() {
             do{
                 try session!.updateApplicationContext(repCountDict)
@@ -98,6 +105,18 @@ class RepCountInterfaceController: WKInterfaceController, WCSessionDelegate{
                 print("error catch")
             }
                    }
+    }
+    
+    func sendFinishSignal(){
+        let repCountDict = ["lift": -1,"rep":-1]
+        if WCSession.isSupported() {
+            do{
+                try session!.updateApplicationContext(repCountDict)
+                //print(String(repCountDict["rep"]) + "sent!")
+            }catch{
+                print("error catch")
+            }
+        }
     }
 
 }

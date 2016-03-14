@@ -14,7 +14,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        WeightLabel.setText("100kg")
+       // WeightLabel.setText("100kg")
 //        if let remainSet: Int = context as? Int{
 //            print("enter context main")
 //            pnp1.B_set = remainSet
@@ -25,7 +25,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
-        return self.pnp1
+        return self.pnp1.getCurrentLift()
     }
 
     //@IBOutlet var SetsCount: WKInterfaceLabel!
@@ -36,6 +36,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var remainSetLabel: WKInterfaceLabel!
     @IBOutlet var totalSetLabel: WKInterfaceLabel!
     
+    var weights:[Float] = [0,0,0,0,0,0]
     let pnp1 = PNP1.init();//change to global later
     
        override func willActivate() {
@@ -46,22 +47,20 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         var squatMax:Float
         var deadliftMax:Float
         var benchMax: Float
+        var weight: Float
         var defaultForExtension:NSUserDefaults! = NSUserDefaults(suiteName: "group.FYPGroup")
+        
         if(defaultForExtension != nil){
-           // prgm = defaultForExtension.objectForKey("Program") as! NSString
-            // squatMax = defaultForAW.floatForKey("SquatMax")
-            //deadliftMax = defaultForAW.floatForKey("DeadliftMax")
-            //benchMax = defaultForAW.floatForKey("BenchMax")
-           // print("gonna set labels")
-            //print("s:" + String(pnp1.S_set))
             pnp1.currentLift = defaultForExtension.integerForKey("currentlift")
+         //   print("weight" + String(defaultForExtension.floatForKey("squat")
             switch(pnp1.currentLift){
-            case 0: pnp1.S_set = defaultForExtension.integerForKey("setcount"); if(pnp1.S_set == 0){pnp1.S_set = 1}; //print("s:" + String(pnp1.S_set))
-            case 1:pnp1.B_set = defaultForExtension.integerForKey("setcount"); print("b" + String(pnp1.B_set))
-            case 2:pnp1.D_set = defaultForExtension.integerForKey("setcount"); print("d" + String(pnp1.D_set))
-            default:break;//pnp1.B_set = defaultForExtension.integerForKey("setcount")
+            case 0:pnp1.S_set = defaultForExtension.integerForKey("setcount"); if(pnp1.S_set == 0){pnp1.S_set = 1};WeightLabel.setText(String(weights[0]))
+            case 1:pnp1.B_set = defaultForExtension.integerForKey("setcount");WeightLabel.setText(String(weights[1]))
+            case 2:pnp1.D_set = defaultForExtension.integerForKey("setcount");WeightLabel.setText(String(weights[2]))
+            default:pnp1.B_set = defaultForExtension.integerForKey("setcount");WeightLabel.setText("")
             }
             setLiftSchemeLabel("PNP1")//prgm)
+           // WeightLabel.setText(String(weight))
         }
 
         // This method is called when watch view controller is about to be visible to user
@@ -158,15 +157,22 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
     }
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-        let receivedTest = applicationContext["test"] as? String
-        print("receive from iOS: " + receivedTest!)
+        let squat = applicationContext["squat"] as! Float
+        let bench = applicationContext["bench"] as! Float
+        let deadlift = applicationContext["deadlift"] as! Float
+        //print("receiving from iOS " + String(squat))
         
         dispatch_async(dispatch_get_main_queue()) {
-            self.LiftScheme.setText(receivedTest! + " received")
+           // self.LiftScheme.setText(receivedTest! + " received")
+            //self.WeightLabel.setText(String(squat))
+            self.weights[0]=squat
+            self.weights[1]=bench
+            self.weights[2]=deadlift
         }
         
     }
 
+    
     
     
     

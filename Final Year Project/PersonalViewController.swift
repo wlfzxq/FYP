@@ -122,16 +122,16 @@ class PersonalViewController: UIViewController, UINavigationControllerDelegate, 
         dismissViewControllerAnimated(true, completion: nil)
     }
     ////testing
-        @IBAction func testButtonSend(sender: AnyObject) {
-            let testDict = ["test":"iOS2AW"]
-            if WCSession.isSupported() {
-                do{
-                    try session!.updateApplicationContext(testDict)
-                    //print(String(repCountDict["rep"]) + "sent!")
-                }catch{
-                    print("error catch")
-                }
-            }
-        }
+//        @IBAction func testButtonSend(sender: AnyObject) {
+//            let testDict = ["test":"iOS2AW"]
+//            if WCSession.isSupported() {
+//                do{
+//                    try session!.updateApplicationContext(testDict)
+//                    //print(String(repCountDict["rep"]) + "sent!")
+//                }catch{
+//                    print("error catch")
+//                }
+//            }
+//        }
 
 }

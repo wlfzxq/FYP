@@ -49,6 +49,8 @@
 		5BD8870D1C907BCE00C961A5 /* TodayPlanWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5BD887001C907BCE00C961A5 /* TodayPlanWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5BD887581C91740F00C961A5 /* RepCountInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD887571C91740F00C961A5 /* RepCountInterfaceController.swift */; };
 		5BD887661C91842E00C961A5 /* PNP1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD887651C91842E00C961A5 /* PNP1.swift */; };
+		5BD914881C96B54B001029D0 /* MajorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD914871C96B54B001029D0 /* MajorData.swift */; };
+		5BD9148D1C96B8B4001029D0 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9148C1C96B8B4001029D0 /* Set.swift */; };
 		5BF32FD81BA715F10066B4EB /* DetailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF32FD71BA715F10066B4EB /* DetailNavigationController.swift */; };
 		5BF32FDC1BA71DD90066B4EB /* reverseSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF32FDB1BA71DD90066B4EB /* reverseSegue.swift */; };
 		5BF32FDE1BA869880066B4EB /* RecommendationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF32FDD1BA869880066B4EB /* RecommendationController.swift */; };
@@ -222,6 +224,8 @@
 		5BD887541C916A4700C961A5 /* FYP_AW Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FYP_AW Extension.entitlements"; sourceTree = "<group>"; };
 		5BD887571C91740F00C961A5 /* RepCountInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepCountInterfaceController.swift; sourceTree = "<group>"; };
 		5BD887651C91842E00C961A5 /* PNP1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNP1.swift; sourceTree = "<group>"; };
+		5BD914871C96B54B001029D0 /* MajorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MajorData.swift; path = ../MajorData.swift; sourceTree = "<group>"; };
+		5BD9148C1C96B8B4001029D0 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		5BF32FD71BA715F10066B4EB /* DetailNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNavigationController.swift; sourceTree = "<group>"; };
 		5BF32FDB1BA71DD90066B4EB /* reverseSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reverseSegue.swift; sourceTree = "<group>"; };
 		5BF32FDD1BA869880066B4EB /* RecommendationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationController.swift; sourceTree = "<group>"; };
@@ -358,6 +362,8 @@
 				5B75CB081C73346900629203 /* TodayViewController.swift */,
 				5BB6910B1BB2F9FA00359C91 /* PersonalViewController.swift */,
 				5B461AA31C5F721200DADAE8 /* Program_Candito.swift */,
+				5BD914871C96B54B001029D0 /* MajorData.swift */,
+				5BD9148C1C96B8B4001029D0 /* Set.swift */,
 			);
 			path = "Final Year Project";
 			sourceTree = "<group>";
@@ -690,12 +696,14 @@
 			files = (
 				5B2354D01BA5ACFA002A2D27 /* Program_PNP3.swift in Sources */,
 				5B461AA41C5F721200DADAE8 /* Program_Candito.swift in Sources */,
+				5BD9148D1C96B8B4001029D0 /* Set.swift in Sources */,
 				5B461A9E1C5F70DF00DADAE8 /* Program_PIP1.swift in Sources */,
 				5BA50A8C1BAAABD00055C012 /* DatePickerViewController.swift in Sources */,
 				5B2354B01BA595EE002A2D27 /* AboutYouViewController.swift in Sources */,
 				5BB6910C1BB2F9FA00359C91 /* PersonalViewController.swift in Sources */,
 				5B0606071BB1B14000D35EDF /* LogViewController.swift in Sources */,
 				5B2354D41BA5B044002A2D27 /* lifts.swift in Sources */,
+				5BD914881C96B54B001029D0 /* MajorData.swift in Sources */,
 				5BF32FE01BA9BC6E0066B4EB /* ProgramListViewController.swift in Sources */,
 				5B461A9C1C5F70CD00DADAE8 /* Program_PNP2.swift in Sources */,
 				5B5B47451BAADC5000935B9B /* MainTabViewController.swift in Sources */,

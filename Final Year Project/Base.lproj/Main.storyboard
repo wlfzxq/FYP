@@ -791,16 +791,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="keT-v5-fO2" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="9" y="85" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-Go-EP5" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uij-2j-miO" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <rect key="frame" x="40" y="356" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="keT-v5-fO2" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="9" y="84" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -1248,13 +1248,6 @@
                                 <rect key="frame" x="96" y="101" width="128" height="128"/>
                                 <connections>
                                     <action selector="pickNewProfilePhoto:" destination="U8r-s3-GHH" eventType="touchUpInside" id="Goz-YM-spc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvY-if-4Ov">
-                                <rect key="frame" x="143" y="387" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="testButtonSend:" destination="U8r-s3-GHH" eventType="touchUpInside" id="VZi-AF-N32"/>
                                 </connections>
                             </button>
                         </subviews>

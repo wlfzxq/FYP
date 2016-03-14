@@ -43,12 +43,19 @@ class LiftsViewController: UIViewController, setUserLiftsDelegate {
         }
         else{
         variables.user.liftDelegate?.setUserLifts(variables.user)
+            variables.core_data.deadlift_max.append(variables.user.deadlift)
+            variables.core_data.bench_max.append(variables.user.bench)
+            variables.core_data.squat_max.append(variables.user.squat)
         variables.defaults.setObject(variables.user.name, forKey: "userName")
         variables.defaults.setInteger(variables.user.age, forKey: "userAge")
         variables.defaults.setFloat(variables.user.weight, forKey: "userWeight")
         variables.defaults.setFloat(variables.user.bench, forKey: "userBenchAtBegin")
         variables.defaults.setFloat(variables.user.squat, forKey: "userSquatAtBegin")
         variables.defaults.setFloat(variables.user.deadlift, forKey: "userDeadliftAtBegin")
+        variables.defaults.setFloat(variables.core_data.squat_max[0], forKey: "initialSQMax")
+        variables.defaults.setFloat(variables.core_data.bench_max[0], forKey: "initialBPMax")
+        variables.defaults.setFloat(variables.core_data.deadlift_max[0], forKey: "initialDLMax")
+            variables.core_data.updateLastLifts()
             self.performSegueWithIdentifier("toThi", sender: self)
         }
     }
