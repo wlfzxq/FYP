@@ -22,7 +22,10 @@ class LogViewController: UIViewController,UIScrollViewDelegate, WCSessionDelegat
     var reps4lifts: [String:Int] = ["lift":0, "reps":0]//0-sq, 1-bp, 2-dl, 3-psq, 4-.....to be continued
   //  var repsDone:[Int] = []
     var session: WCSession!
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.title = "Progress Record"
+    }
     override func viewDidLoad() {
         
         if (WCSession.isSupported()) {

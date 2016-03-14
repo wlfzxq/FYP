@@ -974,7 +974,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="This app is made for final year project by Wang Longfei, who has true passion for powerlifting." translatesAutoresizingMaskIntoConstraints="NO" id="LV6-Yt-qkq">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This app is made for final year project by Wang Longfei, who has true passion for powerlifting." translatesAutoresizingMaskIntoConstraints="NO" id="LV6-Yt-qkq">
                                 <rect key="frame" x="36" y="184" width="248" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1314,7 +1314,7 @@
         <!--Today-->
         <scene sceneID="ysX-1A-XJ0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Pp6-dL-wpG" sceneMemberID="viewController">
+                <navigationController title="Today" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Pp6-dL-wpG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Today" image="Today-30" id="vas-C4-Y9d"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d1H-gx-WbK">
@@ -1498,9 +1498,9 @@
         <segue reference="lbK-Am-96M"/>
         <segue reference="90I-b1-E6B"/>
         <segue reference="GFy-vu-ssq"/>
+        <segue reference="Rjb-Uk-YeX"/>
         <segue reference="yR8-yw-UE3"/>
         <segue reference="udK-fy-GFp"/>
-        <segue reference="Rjb-Uk-YeX"/>
         <segue reference="Iez-hJ-fNb"/>
     </inferredMetricsTieBreakers>
 </document>

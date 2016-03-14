@@ -17,7 +17,12 @@ class TodayViewController: UIViewController, WCSessionDelegate {
     let cal = NSCalendar.currentCalendar()
     var weekday = ""
     var prgm = ""
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.title = "Today's Plan"
+    }
     override func viewDidLoad() {
+        
         prgm = variables.user.curProgram
         
 //        print(prgm);
@@ -97,6 +102,7 @@ class TodayViewController: UIViewController, WCSessionDelegate {
             }
         }
     }
+    
     
     
     /*done receiving*/
